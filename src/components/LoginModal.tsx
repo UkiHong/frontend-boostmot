@@ -89,7 +89,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
           <Button isLoading={mutation.isLoading} type="submit" mt={4} colorScheme={"green"} w="100%">
             Log in
           </Button>
-          <SocialLogin />
+
         </ModalBody>
       </ModalContent>
     </Modal>
