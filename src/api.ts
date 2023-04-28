@@ -4,18 +4,6 @@ import Cookie from "js-cookie";
 import { response } from "express";
 import { formatDate } from "./lib/utils";
 axios.defaults.withCredentials = true;
-axios.interceptors.request.use(
-  (config) => {
-    const token = Cookie.get("csrftoken");
-    if (token) {
-      config.headers["X-CSRFToken"] = token;
-    }
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
 
 const instance = axios.create({
   baseURL:
@@ -23,8 +11,8 @@ const instance = axios.create({
       ? "http://127.0.0.1:8000/api/v1/"
       : "https://boostmot.onrender.com/api/v1",
   withCredentials: true,
-  // xsrfCookieName: "csrftoken",
-  // xsrfHeaderName: "X-CSRFToken",
+  xsrfCookieName: "csrftoken",
+  xsrfHeaderName: "X-CSRFToken",
 });
 
 export const getWorkouts = () =>
