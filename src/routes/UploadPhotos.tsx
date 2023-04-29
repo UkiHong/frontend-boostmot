@@ -44,7 +44,7 @@ export default function UploadPhotos() {
             if (workoutPk) {
                 createPhotoMutation.mutate({
                     description: "I love react",
-                    file: `https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${result.id}/public`,
+                    file: `https://imagedelivery.net/0JgCiGiv_MM7B3ZsYHszbQ/${result.id}/public`,
                     workoutPk,
                 });
             }
